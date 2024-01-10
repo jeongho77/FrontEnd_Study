@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <link href="./styles/game.css" rel="stylesheet">
+</head>
+<body>
+    <div class = "wrapper">
+        <div class="wrapper__header">
+            <div class="header__title">
+                <div class="title">GAME</div>
+                <div class="subtitle">TODAY CHOICE</div>
+            </div>
+            <div class="divideLine"></div>
+        </div>
+        <div class="game__container">
+            <img src="./images/word.png">
+            <div class="game__title">끝말잇기</div>
+            <div class="game__subtitle">제시어 : <span id="word">코드캠프</span></div>
+            <div class="word__text">
+                <input class="textbox" id="myword" placeholder="단어를 입력하세요">
+                <button class="search">검색</button>
+            </div>
+            <div id="result" class="word__result">결과!</div>
+        </div>
+
+        <div class="game__container2">
+            <div class="lotto__box">
+               <img src="./images/lotto.png">
+                <div class="game__lotto__title">LOTTO</div>
+                <div class="game__subtitle"><span id="word">버튼을 누르세요</span></div>
+                <div class="word__text"></div>
+            </div>
+            <div class="game__lotto__number">
+                <div class="number_box" id="number1">3</div>
+                <div class="number_box" id="number2"><span>5</span></div>
+                <div class="number_box" id="number3"><span>10</span></div>
+                <div class="number_box" id="number4"><span>24</span></div>
+                <div class="number_box" id="number5"><span>30</span></div>
+                <div class="number_box" id="number6"><span>34</span></div>
+            </div>
+
+            <button class="search2">Button</button>
+        </div>
+    </div>
+</body>
+</html>

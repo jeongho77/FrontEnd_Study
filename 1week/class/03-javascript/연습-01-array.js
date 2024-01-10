@@ -24,3 +24,29 @@ const fruits = [
         
         classmates[0].school
         // '다람쥐초등학교'
+
+
+
+
+        for (let count = 0; count <persons.length; count++){
+            if(persons[count].age >= 19){
+                console.log(persons[count].name + "성인입니다");
+            }else{
+                console.log(persons[count].name + "미성년자입니다");
+            }
+        }
+        // VM2201:5 철수 미성년자입니다
+        // VM2201:3 영희 성인입니다
+        // VM2201:3 도우너 성인입니다
+        // VM2201:3 안녕 성인입니다
+
+        // 백틱 사용법
+        for(let i = 0; i < fruits.length; i++){
+            console.log(`과일 차트 ${fruits[i].number}위는 ${fruits[i].title}입니다`);
+        } 
+
+        //랜덤번호 뽑기
+        let result = String ( Math.floor(Math.random() * 1000000) ).padStart(6,"0")
+        //undefined
+        result
+        // '691084'
