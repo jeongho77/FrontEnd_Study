@@ -68,17 +68,60 @@ table{
     border-spacing: 0px;
     width:100%;
   }
-th{
-    background-color: #EEEEEE;
-    border-top : 1px solid gray;
-    border-bottom : 1px solid gray;
-    font-size : 10px;
-    color : gray;
+
+.albumTable th {
+    height: 20px;
+    font-size:10px;
+    font-weight: bold;
+    color: gray;
+    background-color : #eeeeee;
+    padding-top : 5px;
+    border-top: 1px solid gray;
+    border-bottom: 1px dashed gray;
 }
 
+.albumTable__artist{
+    text-align:left !important;
+}
 
 td{
-    border-bottom-style: dotted;
-    color : #55B2E4;
+    height : 20px;
+    font-size : 10px;
+    color : #0f465e;
+    border-bottom: 1px dashed gray;
+}
+
+.albumTable__song{
+    width : 45%;
+    text-align :left;
+}
+
+.album-table-checkbox{
+    width: 5%;
+    text-align : center;
+
+}
+
+.album-table-number{
+    width : 10%;
+    text-align : center;
     
+}
+
+.albumTable__artist{
+    width : 30%;
+    text-align : center;
+    
+}
+
+.album-table-number span{
+    
+    text-align : center;
+    color : black;
+}
+
+.album-table-song span, .album-table-artist span{
+    
+    color :#0F465E;
+    ;
 }
