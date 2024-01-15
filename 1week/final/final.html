@@ -1,62 +1,68 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <title>Document</title>
-    <link href ="final.css" rel="stylesheet">
-    <script src ="final.js"></script>
-</head>
-<body>
-    <div class="container">
-        <div class = "form">
-            <div class = "title">
-                <span>코드캠프 회원가입</span>
-            </div>     
-            <div class="email">
-                <input class = "input" placeholder="이메일을 입력해 주세요.">
-            </div>
-            <div class="name">
-                <input class = "input" placeholder="이름을 입력해 주세요.">
-            </div>
-            <div class="pwd1">
-                <input class = "input" placeholder="비밀번호를 입력해 주세요.">
-            </div>
-            <div class="pwd2">
-                <input class = "input" placeholder="비밀번호를 다시 입력해 주세요.">
-            </div>
-            <div class="phone">
-                <input class= "phone1" type = "text" id = "phone1"> -
-                <input class= "phone1" type = "text" id = "phone2"> -
-                <input class= "phone1" type = "text" id = "phone3">
-            </div>
+    <!DOCTYPE html>
+    <html lang="ko">
+    <head>
+        <title>Document</title>
+        <link href ="final.css" rel="stylesheet">
+        <script src ="final.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class = "form">
+                <div class = "title">
+                    <span>코드캠프 회원가입</span>
+                </div>     
+                <div class="email">
+                    <input class = "input" id="input1" placeholder="이메일을 입력해 주세요.">
+                    <span class="span" id="email_span"></span>
+                </div>
+                <div class="name">
+                    <input class = "input" id="input2" placeholder="이름을 입력해 주세요.">
+                    <span class="span" id="name_span"></span>
+                </div>
+                <div class="pwd1">
+                    <input class = "input" id="input3" placeholder="비밀번호를 입력해 주세요.">
+                    <span class="span" id="pwd1_span"></span>
+                </div>
+                <div class="pwd2">
+                    <input class = "input" id="input4" placeholder="비밀번호를 다시 입력해 주세요.">
+                    <span class="span" id="pwd2_span"></span>
+                </div>
+                <div class="phone">
+                    <input class= "phone1" type = "text" id = "phone1" oninput="phone()"> -
+                    <input class= "phone1" type = "text" id = "phone2" oninput="phone()"> -
+                    <input class= "phone1" type = "text" id = "phone3" oninput="phone()">
+                </div>
 
-            <div class="random">
-                <span class="random_span" id ="random_number">000000</span>
-                <button class="random_btn" id="random_btn">인증번호 전송</button>
-            </div>
+                <div class="random">
+                    <span class="random_span" id ="random_number">000000</span>
+                    <button class="random_btn" id="random_btn" disabled="true" onclick="random_number()">인증번호 전송</button>
+                </div>
 
-            <div class="number_check">
-                <span class="timer" id ="timer">3:00</span>
-                <button class="check_btn" id="check_btn">인증 완료</button>
-            </div>
+                <div class="number_check">
+                    <span class="timer" id ="timer">3:00</span>
+                    <button class="check_btn" id="check_btn" disabled = "true" onclick="number_check()" >인증 완료</button>
+                </div>
 
-            <select class ="area_list" id="area_list" disabled="true">
-                <option  selected="true">지역을 선택해주세요.</option>
-                <option> 서울 </option>
-                <option> 인천 </option>
-                <option> 경기 </option>
-            </select>
+                <select class ="area_list"  id="input5">
+                    <option value = "" selected disabled>지역을 선택해주세요.</option>
+                    <option> 서울 </option>
+                    <option> 인천 </option>
+                    <option> 경기 </option>
+                </select>
+                <span class="span" id="area_span"></span>
 
-            <div class="radio">
-                <input type="radio" name = "men" >남성
-                <input type="radio" name = "women" style="margin-left: 25px;">여성
-            </div>
-            
-            <div class="divideLine"></div>
+                <div class="radio">
+                    <input type="radio" id="male" name="gender" value="남성">남성
+                    <input type="radio" id="female" name="gender" value="여성" style="margin-left: 25px;">여성
+                </div>
+                
+                <span class="span" id="gender_span"></span>
+                <div class="divideLine"></div>
 
-            <div class="submit">
-                <button class="submit_btn" onclick="submit()">가입하기</button>
+                <div class="submit">
+                    <button class="submit_btn" onclick="submit()">가입하기</button>
+                </div>
             </div>
         </div>
-    </div>
-</body>
-</html>
+    </body>
+    </html>
