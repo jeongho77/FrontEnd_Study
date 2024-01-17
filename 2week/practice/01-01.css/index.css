@@ -1,0 +1,20 @@
+.title{
+    color:red
+}
+
+.box1 .title{
+    color :yellow
+}
+
+.title#headline {
+    color : violet
+}
+
+.contents{
+    font-size : 28px;
+    font-style : italic;
+    text-decoration: underline;
+    font-weight: 600;
+
+}
+
