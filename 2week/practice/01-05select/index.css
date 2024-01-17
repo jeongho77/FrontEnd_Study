@@ -1,0 +1,16 @@
+.box1 p:first-child {
+    background-color : red;
+}
+
+.box1 p:last-child {
+    background-color : blue;
+}
+
+.box1 p:nth-child(2n) {
+    background-color: aquamarine;
+}
+
+.button1:hover{ 
+    background-color: green;
+    color: #ffffff;
+}
