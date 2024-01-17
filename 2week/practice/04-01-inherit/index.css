@@ -1,0 +1,18 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    color : blue;
+    font-size : 38px;
+    border : 4px solid orange;
+}
+
+.inner-box{
+    color : orange;
+}
+
+.inner-box p{
+    color:red;
+    font-family: arial, "맑은 고딕", sans-serif;
+}
