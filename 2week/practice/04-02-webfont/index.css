@@ -5,6 +5,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap');
 
 div {
+    width : 300px;
     font-family: 'Nanum Brush Script', cursive;
     font-size: 50px;
+    line-height: 3;
+    background-color: blue;
+    text-indent : 50px;
+    text-overflow: clip;
+    white-space: nowrap;
+    overflow : hidden;
 }
