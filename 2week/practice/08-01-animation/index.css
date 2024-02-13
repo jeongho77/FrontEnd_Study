@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+}
+
+.item {
+    height : 300px;
+    width : 300px;
+    background-color: blue;
+    animation: moveRight 20s ease-in-out 1s 3 alternate;
+}
+
+.item p{
+    font-size: 80px;
+    color : white;
+    text-align: center;
+}
+
+@keyframes moveRight {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(200px);
+    }
+}
