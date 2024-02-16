@@ -2,6 +2,8 @@ const messageContainer = document.querySelector("#d-day-message");
 messageContainer.style.color = "red";
 messageContainer.innerHTML = "<h3>D-Day를 입력해 주세요. </h3>";
 
+const savedDate = localStorage.getItem("saved-date");
+
 const container = document.querySelector("#d-day-container");
 container.style.display = "none";
 
@@ -15,14 +17,19 @@ const dateFormMaker = function () {
   const dateFormat = inputYear + "-" + inputMonth + "-" + inputDate;
   console.log(dateFormat);
 
-  counterMake(dateFormat);
+  return dateFormat;
 };
 
 const counterMake = (dateFormat) => {
+  if (dateFormat !== savedDate) {
+    localStorage.setItem("saved-date", dateFormat);
+  }
+
   console.log("반복실행중");
   const nowDate = new Date();
   const targetDate = new Date(dateFormat).setHours(0, 0, 0, 0);
   const remaining = (targetDate - nowDate) / 1000;
+  console.log(remaining);
 
   // 만약, remaining이 0 이라면, 타이머가 종료 되었습니다. 출력
   // 수도코드
@@ -58,9 +65,18 @@ const counterMake = (dateFormat) => {
   const documentArr = ["days", "hours", "min", "sec"];
   const timeKeys = Object.keys(remainingObj);
 
+  const format = function (time) {
+    if (time < 10) {
+      return "0" + time;
+    } else {
+      return time;
+    }
+  };
+
   let i = 0;
   for (let tag of documentArr) {
-    document.getElementById(tag).textContent = remainingObj[timeKeys[i]];
+    const remainingTime = format(remainingObj[timeKeys[i]]);
+    document.getElementById(tag).textContent = remainingTime;
     i++;
   }
 
@@ -81,19 +97,47 @@ const counterMake = (dateFormat) => {
   //   documentObj["sec"].textContent = remainingObj["remainingSec"];
 };
 
-const starter = () => {
+const starter = (targetDateInput) => {
+  if (!targetDateInput) {
+    //값이 없으면
+    targetDateInput = dateFormMaker();
+  }
+
+  setClearInterval();
+
   container.style.display = "flex";
   messageContainer.style.display = "none";
-  dateFormMaker();
-  const intervalId = setInterval(dateFormMaker, 1000);
+
+  counterMake(targetDateInput);
+  const intervalId = setInterval(() => {
+    counterMake(targetDateInput);
+  }, 1000);
+
   intervalIdArr.push(intervalId);
   console.log(intervalIdArr);
 };
 
 const setClearInterval = function () {
+  localStorage.removeItem("saved-date");
+
   container.style.display = "none";
   messageContainer.style.display = "flex";
   for (let i = 0; i < intervalIdArr.length; i++) {
     clearInterval(intervalIdArr[i]);
   }
 };
+
+const resetTimer = function () {
+  container.style.display = "none";
+  messageContainer.innerHTML = "<h3>D-Day를 입력해 주세요.</h3>";
+  messageContainer.style.display = "flex";
+  setClearInterval();
+};
+
+if (savedDate) {
+  // 웹사이트가 켜지면 로컬에 밸류값이 있을경우에 실행
+  starter(savedDate);
+} else {
+  container.style.display = "none";
+  messageContainer.style.display = "<h3>D-Day를 입력해 주세요.</h3>";
+}
