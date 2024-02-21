@@ -81,7 +81,11 @@ if (savedTodoList) {
   }
 }
 
-const weatherDataActive = function () {};
+const weatherDataActive = function ({ location, weather }) {
+  const locationNameTag = document.querySelector("#location-name-tag");
+  locationNameTag.textContent = location;
+  console.log(locationNameTag);
+};
 
 const weatherSearch = function ({ latitude, longitude }) {
   fetch(
@@ -92,6 +96,11 @@ const weatherSearch = function ({ latitude, longitude }) {
     })
     .then((json) => {
       console.log(json.name, json.weather[0].description);
+      const weatherData = {
+        location: json.name,
+        weather: json.weather[0].main,
+      };
+      weatherDataActive(weatherData);
     })
     .catch((err) => {
       console.log(err);
