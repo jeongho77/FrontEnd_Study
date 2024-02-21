@@ -1,6 +1,7 @@
 const todoInput = document.querySelector("#todo-input");
 const todoList = document.querySelector("#todo-list");
 const savedTodoList = JSON.parse(localStorage.getItem("saved-items"));
+const savedWeatherData = JSON.parse(localStorage.getItem("saved-weather"));
 
 const createTodo = function (storageData) {
   let todoContents = todoInput.value;
@@ -82,9 +83,36 @@ if (savedTodoList) {
 }
 
 const weatherDataActive = function ({ location, weather }) {
+  const weatherMainList = [
+    "Clear",
+    "Clouds",
+    "Drizzle",
+    "Rain",
+    "Snow",
+    "Thunderstorm",
+  ];
+  weather = weatherMainList.includes(weather) ? weather : "Fog";
   const locationNameTag = document.querySelector("#location-name-tag");
+
   locationNameTag.textContent = location;
-  console.log(locationNameTag);
+  document.body.style.backgroundImage = `url('./images/${weather}.jpg')`;
+
+  if (
+    !savedWeatherData || //local에 Data가 없을경우 TRUE / 있으면 false
+    savedWeatherData.location !== location || //local에 location이 서버와와 다를경우 true
+    savedWeatherData.weather !== weather // local에 weather이 서버와와 다를경우 true
+    // local에 저장된값이 없는경우 실행한다.
+    // 만약 있어도 location이 서버에서 받아오는 매개변수 값과 다르면 실행함
+  ) {
+    //실행하면 값이 최신화 된거기에 local에 저장하기
+    console.log("조건식 성립");
+    localStorage.setItem(
+      "saved-weather",
+      JSON.stringify({ location, weather })
+    );
+  } else {
+    console.log("조건식 성립x");
+  }
 };
 
 const weatherSearch = function ({ latitude, longitude }) {
@@ -124,6 +152,10 @@ const askForLocation = function () {
 };
 
 askForLocation();
+
+if (savedWeatherData) {
+  weatherDataActive(savedWeatherData);
+}
 
 // const promiseTest = function () {
 //   return new Promise((resolver, reject) => {
