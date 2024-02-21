@@ -41,7 +41,7 @@ const createTodo = function (storageData) {
 };
 
 const keyCodeCheck = function () {
-  if (window.event.keyCode === 13 && todoInput.value !== "") {
+  if (window.event.keyCode === 13 && todoInput.value.trim() !== "") {
     // 엔터는 13
     createTodo();
   }
@@ -81,9 +81,11 @@ if (savedTodoList) {
   }
 }
 
-const weatherSearch = function (position) {
+const weatherDataActive = function () {};
+
+const weatherSearch = function ({ latitude, longitude }) {
   fetch(
-    `https://api.openweathermap.org/data/2.5/weather?lat=${position.latitude}&lon=${position.longitude}&appid=d5adc8ce05e9e4cd506e8886305da11e`
+    `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=d5adc8ce05e9e4cd506e8886305da11e`
   )
     .then((res) => {
       return res.json();
@@ -96,10 +98,12 @@ const weatherSearch = function (position) {
     });
 };
 
-const accessToGeo = function (position) {
+const accessToGeo = function ({ coords }) {
+  const { latitude, longitude } = coords;
+  // shorthand property 구조분해할당
   const positionObj = {
-    latitude: position.coords.latitude,
-    longitude: position.coords.longitude,
+    latitude,
+    longitude,
   };
   weatherSearch(positionObj);
 };
