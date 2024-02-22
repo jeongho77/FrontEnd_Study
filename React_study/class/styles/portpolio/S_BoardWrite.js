@@ -24,7 +24,6 @@ export const Title = styled.div`
 `;
 
 export const WriterWrapper = styled.div`
-  width: 1220px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -43,7 +42,7 @@ export const InputBox = styled.div`
 
 export const InputWriter = styled.input`
   padding-left: 16px;
-  width: 550px;
+  width: 450px;
   height: 52px;
   border: 3px solid #bdbdbd;
   font-size: 20px;
@@ -51,14 +50,14 @@ export const InputWriter = styled.input`
 
 export const InputPwd = styled.input`
   padding-left: 16px;
-  width: 550px;
+  width: 450px;
   height: 52px;
   border: 3px solid #bdbdbd;
   font-size: 20px;
 `;
 
 export const InputTitle = styled.input`
-  width: 1200px;
+  width: 1000px;
   height: 52px;
   border: 3px solid #bdbdbd;
   font-size: 20px;
@@ -66,7 +65,7 @@ export const InputTitle = styled.input`
 `;
 
 export const InputContent = styled.textarea`
-  width: 1200px;
+  width: 1000px;
   height: 350px;
   font-size: 20px;
   border: 3px solid #bdbdbd;
@@ -99,7 +98,7 @@ export const AddressButton = styled.button`
 `;
 
 export const InputAddress = styled.input`
-  width: 1200px;
+  width: 1000px;
   height: 52px;
   border: 3px solid #bdbdbd;
   padding-left: 16px;
