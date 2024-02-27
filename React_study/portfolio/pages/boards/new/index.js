@@ -19,7 +19,7 @@ import {
   WriterWrapper,
   Youtube,
   Zipcode,
-  ZipcodeWrapper
+  ZipcodeWrapper,
 } from "../../../styles/boardsNew";
 
 export default function BoardsNewPage() {

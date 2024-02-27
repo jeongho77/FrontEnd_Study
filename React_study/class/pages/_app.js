@@ -1,6 +1,5 @@
 // 모든페이지의 공통설정들을 여기서 진행함
-// import "../styles/globals.css";
-
+import "../styles/globals.css";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
 export default function App({ Component }) {

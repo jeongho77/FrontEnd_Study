@@ -1,11 +1,5 @@
 import styled from "@emotion/styled";
 
-export const hi = styled.div`
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-`;
-
 export const Wrapper = styled.div`
   width: 1200px;
   margin: 100px;
@@ -46,6 +40,13 @@ export const InputWriter = styled.input`
   height: 52px;
   border: 3px solid #bdbdbd;
   font-size: 20px;
+`;
+
+export const Error = styled.div`
+  color: blue;
+  padding-top: 3px;
+  font-size: 16px;
+  margin-left: 5px;
 `;
 
 export const InputPwd = styled.input`
