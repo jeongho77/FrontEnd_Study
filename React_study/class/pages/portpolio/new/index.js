@@ -23,7 +23,7 @@ import {
   SubmitButton,
   ButtonWrapper,
   Error,
-} from "../../styles/portpolio/S_BoardWrite";
+} from "../../../styles/portpolio/S_BoardWrite";
 import { useState } from "react";
 
 const graphQl = gql`
