@@ -5,7 +5,7 @@ import { CREATE_BOARD } from "./P_BoardNew.queries";
 import { useRouter } from "next/router";
 
 export default function BoardNew() {
-  const router = useRouter();
+  const router = useRouter(); //해당 상위폴더가 [] 로 되어있으면 가능
 
   const [writer, setWriter] = useState();
   const [pwd, setPwd] = useState();
@@ -29,6 +29,7 @@ export default function BoardNew() {
   const onChangePwd = (event) => {
     setPwd(event.target.value);
     setErrorPwd("");
+    console.log(event.target.value);
   };
 
   const onChangeTitle = (event) => {
@@ -55,21 +56,19 @@ export default function BoardNew() {
       setErrorContent("내용을 입력해주세요");
     }
     if (writer && pwd && title && content) {
-      alert("등록이 완료됐습니다!");
-      // boardRegister();
       try {
         const result = await createBoard({
           variables: {
             createBoardInput: {
               writer,
-              password,
+              pwd,
               title,
               content,
             },
           },
         });
-        console.log(result.data.createBoard._id);
-        router.push(`/boards/${result.data.createBoard._id}`);
+        console.log(result.data.createBoard.number);
+        router.push(`/portpolio/${result.data.createBoard.number}`);
       } catch (error) {
         alert(error.message);
       }
