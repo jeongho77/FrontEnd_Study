@@ -1,11 +1,9 @@
 import { gql } from "@apollo/client";
 
-const graphQl = gql`
-  mutation createBoard($writer: String, $title: String, $contents: String) {
-    createBoard(writer: $writer, title: $title, contents: $contents) {
+export const CREATE_BOARD = gql`
+  mutation createBoard($createBoardInput: CreateBoardInput!) {
+    createBoard(createBoardInput: $createBoardInput) {
       _id
-      number
-      message
     }
   }
 `;

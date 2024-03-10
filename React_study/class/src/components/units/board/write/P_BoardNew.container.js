@@ -1,15 +1,18 @@
 import { useMutation } from "@apollo/client";
 import { useState } from "react";
 import BoardNewUI from "./P_BoardNew.presenter";
+import { CREATE_BOARD } from "./P_BoardNew.queries";
+import { useRouter } from "next/router";
 
 export default function BoardNew() {
+  const router = useRouter();
+
   const [writer, setWriter] = useState();
   const [pwd, setPwd] = useState();
   const [title, setTitle] = useState();
   const [content, setContent] = useState();
-  const [address, setAddress] = useState();
 
-  const [board] = useMutation(graphQl);
+  const [createBoard] = useMutation(CREATE_BOARD);
 
   const [errorWriter, setErrorWriter] = useState();
   const [errorPwd, setErrorPwd] = useState();
@@ -38,7 +41,7 @@ export default function BoardNew() {
     setErrorContent("");
   };
 
-  const submit = (event) => {
+  const submit = async () => {
     if (!writer) {
       setErrorWriter("이름을 입력해주세요");
     }
@@ -53,30 +56,47 @@ export default function BoardNew() {
     }
     if (writer && pwd && title && content) {
       alert("등록이 완료됐습니다!");
-      boardRegister();
+      // boardRegister();
+      try {
+        const result = await createBoard({
+          variables: {
+            createBoardInput: {
+              writer,
+              password,
+              title,
+              content,
+            },
+          },
+        });
+        console.log(result.data.createBoard._id);
+        router.push(`/boards/${result.data.createBoard._id}`);
+      } catch (error) {
+        alert(error.message);
+      }
     }
   };
 
-  const boardRegister = async () => {
-    const result = await board({
-      variables: {
-        writer: writer,
-        title: title,
-        contents: content,
-      },
-    });
-  };
+  // const boardRegister = async () => {
+  //   const result = await board({
+  //     variables: {
+  //       writer: writer,
+  //       title: title,
+  //       contents: content,
+  //     },
+  //   });
+  // };
 
   return (
-    <div>
-      <BoardNewUI
-        onChangeWriter={onChangeWriter}
-        onChangePwd={onChangePwd}
-        onChangeTitle={onChangeTitle}
-        onChangeContent={onChangeContent}
-        submit={submit}
-        boardRegister={boardRegister}
-      />
-    </div>
+    <BoardNewUI
+      errorWriter={errorWriter}
+      errorPwd={errorPwd}
+      errorTitle={errorTitle}
+      errorContent={errorContent}
+      onChangeWriter={onChangeWriter}
+      onChangePwd={onChangePwd}
+      onChangeTitle={onChangeTitle}
+      onChangeContent={onChangeContent}
+      submit={submit}
+    />
   );
 }

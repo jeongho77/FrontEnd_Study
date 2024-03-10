@@ -9,125 +9,158 @@ export const Wrapper = styled.div`
   border: 1px solid black;
   box-shadow: gray;
   border-radius: 20px;
-  background-color: white;
 `;
 
-export const Header = styled.div`
-  width: 1000px;
+export const Title = styled.div`
+  font-size: 34px;
+  font-weight: bold;
+  text-align: center;
+`;
+
+export const WriterWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
-  margin: 40px 0px;
-  border-bottom: 1px solid gray;
-  background-color: white;
   justify-content: space-between;
+  padding-top: 40px;
 `;
 
-export const Profile_Wrapper = styled.div`
+export const Label = styled.div`
+  padding-bottom: 16px;
+  font-size: 30px;
+  font-weight: bold;
+`;
+
+export const InputBox = styled.div`
+  padding-top: 40px;
+`;
+
+export const InputWriter = styled.input`
+  padding-left: 16px;
+  width: 450px;
+  height: 52px;
+  border: 3px solid #bdbdbd;
+  font-size: 20px;
+`;
+
+export const Error = styled.div`
+  color: blue;
+  padding-top: 3px;
+  font-size: 16px;
+  margin-left: 5px;
+`;
+
+export const InputPwd = styled.input`
+  padding-left: 16px;
+  width: 450px;
+  height: 52px;
+  border: 3px solid #bdbdbd;
+  font-size: 20px;
+`;
+
+export const InputTitle = styled.input`
+  width: 1000px;
+  height: 52px;
+  border: 3px solid #bdbdbd;
+  font-size: 20px;
+  padding-left: 16px;
+`;
+
+export const InputContent = styled.textarea`
+  width: 1000px;
+  height: 350px;
+  font-size: 20px;
+  border: 3px solid #bdbdbd;
+  padding-left: 16px;
+  padding-top: 20px;
+`;
+
+export const AddressWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+`;
+
+export const InputAddressNumber = styled.input`
+  width: 120px;
+  height: 57px;
+  font-size: 20px;
+  border: 3px solid #bdbdbd;
+  padding-left: 16px;
+`;
+
+export const AddressButton = styled.button`
+  width: 190px;
+  height: 60px;
+  margin-left: 16px;
+  background-color: black;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+`;
+
+export const InputAddress = styled.input`
+  width: 1000px;
+  height: 52px;
+  border: 3px solid #bdbdbd;
+  padding-left: 16px;
+  font-size: 20px;
+  margin-bottom: 20px;
+`;
+
+export const ImageBox = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-export const Profile_image = styled.img`
-  margin-left: 10px;
-  padding-right: 20px;
-  width: 80px;
-  background-size: cover;
-`;
-
-export const Profile = styled.div`
-  display: flex;
-  flex-direction: row;
-  padding-bottom: 15px;
-`;
-
-export const Writer = styled.div`
-  font-size: 25px;
-`;
-
-export const Date = styled.div`
-  font-size: 20px;
-  color: gray;
-`;
-
-export const Link_Wrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
-
-export const Url_btn = styled.button`
-  width: 40px;
-  height: 40px;
-  background-image: url(/images/ic_link-32px.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  border: 0;
-  margin-right: 10px;
-`;
-
-export const Map_btn = styled.button`
-  width: 40px;
-  height: 40px;
-  background-image: url(/images/ic_location_on-32px.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  border: 0;
-  margin-right: 10px;
-`;
-
-export const Content_Wrapper = styled.div`
-  margin: 30px 10px;
-`;
-
-export const Title = styled.div`
-  font-size: 40px;
-  font-weight: bold;
-`;
-
-export const Image = styled.img`
-  padding-top: 40px;
-  padding-bottom: 80px;
-`;
-
-export const Content = styled.text`
-  font-size: 20px;
-  font-weight: bold;
-  padding-bottom: 150px;
-`;
-
-export const Video = styled.img``;
-
-export const Like_Wrapper = styled.div`
-  margin-top: 150px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-`;
-
-export const Like = styled.img`
-  width: 40px;
-  height: 40px;
-  background-image: url("/images/up.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  border: 0;
-`;
-
-export const Like_button = styled.button`
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
-  border: 1px solid whitesmoke;
+export const UploadButton = styled.button`
+  width: 140px;
+  height: 130px;
+  background-color: #bdbdbd;
+  margin-right: 24px;
+  outline: none;
+  border: none;
   cursor: pointer;
 `;
 
-export const Like_p = styled.p``;
+export const ImageBox2 = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
 
-export const Bad = styled.img`
-  width: 40px;
-  height: 40px;
+export const InputOption = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+`;
 
-  background-repeat: no-repeat;
-  background-size: cover;
-  border: 0;
+export const RadioWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+export const RadioButton = styled.input`
+  cursor: pointer;
+`;
+
+export const RadioLabel = styled.label`
+  margin-left: 8px;
+  margin-right: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 23px;
+`;
+export const ButtonWrapper = styled.div`
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+`;
+export const SubmitButton = styled.button`
+  width: 200px;
+  height: 70px;
+  font-size: 20px;
+  font-weight: 700;
+  background-color: orange;
+  color: black;
+  border: 0px;
+  cursor: pointer;
 `;

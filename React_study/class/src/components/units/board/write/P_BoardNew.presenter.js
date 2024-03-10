@@ -1,104 +1,80 @@
-import {
-  Wrapper,
-  Title,
-  InputBox,
-  InputWriter,
-  InputPwd,
-  Label,
-  WriterWrapper,
-  InputTitle,
-  InputContent,
-  AddressWrapper,
-  AddressButton,
-  InputAddress,
-  InputAddressNumber,
-  ImageBox,
-  UploadButton,
-  ImageBox2,
-  InputOption,
-  RadioButton,
-  RadioLabel,
-  RadioWrapper,
-  SubmitButton,
-  ButtonWrapper,
-  Error,
-} from "./P_BoardNew.styles";
+import * as P from "./P_BoardNew.styles";
 
 export default function BoardNewUI(props) {
   return (
-    <Wrapper>
-      <Title>게시글 등록</Title>
-      <WriterWrapper>
-        <InputBox>
-          <Label>작성자</Label>
-          <InputWriter
+    <P.Wrapper>
+      <P.Title>게시글 등록</P.Title>
+      <P.WriterWrapper>
+        <P.InputBox>
+          <P.Label>작성자</P.Label>
+          <P.InputWriter
             placeholder="이름을 적어주세요."
-            onChange={onChangeWriter}
-          ></InputWriter>
-          <Error>{errorWriter}</Error>
-        </InputBox>
-        <InputBox>
-          <Label>비밀번호</Label>
-          <InputPwd
+            onChange={props.onChangeWriter}
+          ></P.InputWriter>
+          <P.Error>{props.errorWriter}</P.Error>
+        </P.InputBox>
+        <P.InputBox>
+          <P.Label>비밀번호</P.Label>
+          <P.InputPwd
             placeholder="비밀번호를 적어주세요."
-            onChange={onChangePwd}
-          ></InputPwd>
-          <Error>{errorPwd}</Error>
-        </InputBox>
-      </WriterWrapper>
-      <InputBox>
-        <Label>제목</Label>
-        <InputTitle
+            onChange={props.onChangePwd}
+          ></P.InputPwd>
+          <P.Error>{props.errorPwd}</P.Error>
+        </P.InputBox>
+      </P.WriterWrapper>
+      <P.InputBox>
+        <P.Label>제목</P.Label>
+        <P.InputTitle
           placeholder="제목을 작성해주세요."
-          onChange={onChangeTitle}
-        ></InputTitle>
-        <Error>{errorTitle}</Error>
-      </InputBox>
-      <InputBox>
-        <Label>내용</Label>
-        <InputContent
+          onChange={props.onChangeTitle}
+        ></P.InputTitle>
+        <P.Error>{props.errorTitle}</P.Error>
+      </P.InputBox>
+      <P.InputBox>
+        <P.Label>내용</P.Label>
+        <P.InputContent
           placeholder="내용을 작성해주세요."
-          onChange={onChangeContent}
-        ></InputContent>
-        <Error>{errorContent}</Error>
-      </InputBox>
-      <InputBox>
-        <Label>주소</Label>
-        <AddressWrapper>
-          <InputAddressNumber placeholder="07250"></InputAddressNumber>
-          <AddressButton>우편번호 검색</AddressButton>
-        </AddressWrapper>
-        <InputAddress></InputAddress>
-        <InputAddress></InputAddress>
-      </InputBox>
+          onChange={props.onChangeContent}
+        ></P.InputContent>
+        <P.Error>{props.errorContent}</P.Error>
+      </P.InputBox>
+      <P.InputBox>
+        <P.Label>주소</P.Label>
+        <P.AddressWrapper>
+          <P.InputAddressNumber placeholder="07250"></P.InputAddressNumber>
+          <P.AddressButton>우편번호 검색</P.AddressButton>
+        </P.AddressWrapper>
+        <P.InputAddress></P.InputAddress>
+        <P.InputAddress></P.InputAddress>
+      </P.InputBox>
 
-      <InputBox>
-        <Label>유튜브</Label>
-        <InputAddress placeholder="링크를 복사해주세요."></InputAddress>
-      </InputBox>
+      <P.InputBox>
+        <P.Label>유튜브</P.Label>
+        <P.InputAddress placeholder="링크를 복사해주세요."></P.InputAddress>
+      </P.InputBox>
 
-      <ImageBox>
-        <Label>사진 첨부</Label>
-        <ImageBox2>
-          <UploadButton>+</UploadButton>
-          <UploadButton>+</UploadButton>
-          <UploadButton>+</UploadButton>
-        </ImageBox2>
-      </ImageBox>
+      <P.ImageBox>
+        <P.Label>사진 첨부</P.Label>
+        <P.ImageBox2>
+          <P.UploadButton>+</P.UploadButton>
+          <P.UploadButton>+</P.UploadButton>
+          <P.UploadButton>+</P.UploadButton>
+        </P.ImageBox2>
+      </P.ImageBox>
 
-      <InputOption>
-        <Label>메인 설정</Label>
-        <RadioWrapper>
-          <RadioButton type="radio" />
-          <RadioLabel>유튜브</RadioLabel>
-          <RadioButton type="radio" />
-          <RadioLabel>사진</RadioLabel>
-        </RadioWrapper>
-      </InputOption>
+      <P.InputOption>
+        <P.Label>메인 설정</P.Label>
+        <P.RadioWrapper>
+          <P.RadioButton type="radio" />
+          <P.RadioLabel>유튜브</P.RadioLabel>
+          <P.RadioButton type="radio" />
+          <P.RadioLabel>사진</P.RadioLabel>
+        </P.RadioWrapper>
+      </P.InputOption>
 
-      <ButtonWrapper>
-        <SubmitButton onClick={submit}>등록하기</SubmitButton>
-      </ButtonWrapper>
-    </Wrapper>
+      <P.ButtonWrapper>
+        <P.SubmitButton onClick={props.submit}>등록하기</P.SubmitButton>
+      </P.ButtonWrapper>
+    </P.Wrapper>
   );
 }
