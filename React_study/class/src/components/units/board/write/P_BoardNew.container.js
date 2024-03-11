@@ -12,6 +12,8 @@ export default function BoardNew() {
   const [title, setTitle] = useState();
   const [content, setContent] = useState();
 
+  const [isActive, setIsActive] = useState(false); 
+
   const [createBoard] = useMutation(CREATE_BOARD);
 
   const [errorWriter, setErrorWriter] = useState();
@@ -24,22 +26,41 @@ export default function BoardNew() {
   const onChangeWriter = (event) => {
     setWriter(event.target.value);
     setErrorWriter("");
+    if(event.target.value && pwd && title && content){
+      setIsActive(true);
+    }else{
+      setIsActive(false)
+    }
   };
 
   const onChangePwd = (event) => {
     setPwd(event.target.value);
     setErrorPwd("");
-    console.log(event.target.value);
+    if(writer && event.target.value && title && content){
+      setIsActive(true);
+    }else{
+      setIsActive(false)
+    }
   };
 
   const onChangeTitle = (event) => {
     setTitle(event.target.value);
     setErrorTitle("");
+    if(writer && pwd && event.target.value && content){
+      setIsActive(true);
+    }else{
+      setIsActive(false)
+    }
   };
 
   const onChangeContent = (event) => {
     setContent(event.target.value);
     setErrorContent("");
+    if(writer && pwd && title && event.target.value){
+      setIsActive(true);
+    }else{
+      setIsActive(false)
+    }
   };
 
   const submit = async () => {
@@ -96,6 +117,7 @@ export default function BoardNew() {
       onChangeTitle={onChangeTitle}
       onChangeContent={onChangeContent}
       submit={submit}
+      isActive = {isActive}
     />
   );
 }

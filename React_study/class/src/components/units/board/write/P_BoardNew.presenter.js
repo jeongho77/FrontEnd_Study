@@ -73,7 +73,7 @@ export default function BoardNewUI(props) {
       </P.InputOption>
 
       <P.ButtonWrapper>
-        <P.SubmitButton onClick={props.submit}>등록하기</P.SubmitButton>
+        <P.SubmitButton onClick={props.submit} isActive={props.isActive}>등록하기</P.SubmitButton>
       </P.ButtonWrapper>
     </P.Wrapper>
   );

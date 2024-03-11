@@ -43,12 +43,11 @@ export default function StaticRoutingMovedPage() {
   return (
     <div>
       {/* 특별한 이유가 없으면 ? fragment로 감싸자! <div/>는 1개더그려야되서 조금 느려짐 */}
-      {data?.fetchBoards.map(
-        (
-          el, //반복을 10번해줌 맵을 쓸거면 div에 무조건 키 넣어주기
-          index // index론 키를 주지않는다. 왜냐하면 게시글을 삭제할때 다음 게시글이 올라오면서
+      { data?.fetchBoards.map( (el, index) => (
+          //반복을 10번해줌 맵을 쓸거면 div에 무조건 키 넣어주기
+          // index론 키를 주지않는다. 왜냐하면 게시글을 삭제할때 다음 게시글이 올라오면서
           // 기존 index와 동일한 값을 갖게 됨 . 즉, 유일하지 않음.
-        ) => (
+       
           //1. 프로그먼트란? <></> , <Fragment></Fragment>
           //2. 프래그먼트에 key 입력하는 방법? <Fragment key ={1}></Fragment>
           // <Fragment key={el.number}>
