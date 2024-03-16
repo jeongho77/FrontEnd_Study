@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 
+
 export const Wrapper = styled.div`
   width: 1200px;
   margin: 100px;
@@ -141,4 +142,58 @@ export const SelectBtn = styled.button`
   background-color: black;
   color: white;
 
+`
+
+export const TableTop = styled.div`
+  border-top : 2px solid gray;
+  margin-top : 20px;
+`
+
+export const Row = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin: 0px 0px;
+  padding : 13px 0px;
+  border-bottom: 1px solid grey;
+  
+  
+`
+
+export const ColumHeaderNumber = styled.div`
+  width : 10%;
+  text-align: center;
+`
+export const ColumHeaderTitle = styled.div`
+  width : 70%;
+  text-align: center;
+`
+export const ColumHeaderWriter = styled.div`
+  width : 10%;
+  text-align: center;
+`
+export const ColumHeaderDate = styled.div`
+  width : 10%;
+  text-align: center;
+`
+
+export const ColumNumber = styled.div`
+  width : 10%;
+  text-align: center;
+`
+export const ColumTitle = styled.div`
+  width : 70%;
+  text-align: center;
+`
+export const ColumWriter = styled.div`
+  width : 10%;
+  text-align: center;
+`
+export const ColumDate = styled.div`
+  width : 10%;
+  text-align: center;
+`
+
+export const TableBottom = styled.div`
+  border-top : 2px solid gray;
+  
 `

@@ -1,6 +1,7 @@
+import { getDate } from "../../../commons/libraries/utils";
 import * as S from "./BoardList.styles";
 
-export default function BoardListUI() {
+export default function BoardListUI(props) {
   return (
     <S.Wrapper>
       <S.Head>
@@ -86,14 +87,37 @@ export default function BoardListUI() {
           <S.SelectBtn>검색하기</S.SelectBtn>
         </S.Select_Wrapper>
 
-
-        <S.BoardList>
-          <Board>
-            
-          </Board>
-        </S.BoardList>
-
         
+        <S.TableTop></S.TableTop>
+        <S.Row>
+          <S.ColumHeaderNumber>번호</S.ColumHeaderNumber>
+          <S.ColumHeaderTitle>제목</S.ColumHeaderTitle>
+          <S.ColumHeaderWriter>작성자</S.ColumHeaderWriter>
+          <S.ColumHeaderDate>날짜</S.ColumHeaderDate>
+        </S.Row>
+
+        {props.data?.fetchBoards.map((el) => (
+        <S.Row key={el._id}>
+          <S.ColumnBasic>
+            {String(el._id).slice(-4).toUpperCase()}
+          </S.ColumnBasic>
+          <S.ColumnTitle id={el._id} onClick={props.onClickMoveToBoardDetail}>
+            {el.title}
+          </S.ColumnTitle>
+          <S.ColumnBasic>{el.writer}</S.ColumnBasic>
+          <S.ColumnBasic>{getDate(el.createdAt)}</S.ColumnBasic>
+        </S.Row>
+      ))}
+        
+
+        <S.Row>
+          <S.ColumNumber>10</S.ColumNumber>
+          <S.ColumTitle>게시물</S.ColumTitle>
+          <S.ColumWriter>ㅇㅇㅇ</S.ColumWriter>
+          <S.ColumDate>날짜</S.ColumDate>
+        </S.Row>
+        
+        <S.TableBottom></S.TableBottom>
 
       </S.Head>
     </S.Wrapper>
