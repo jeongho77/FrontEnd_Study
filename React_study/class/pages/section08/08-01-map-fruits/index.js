@@ -30,7 +30,8 @@ export default function MapFruitsPage() {
 
   return (
     <div>
-      <div>{aaa}</div>; ===============================
+      <div>{aaa}</div>; 
+      ===============================
       <div>{bbb}</div>; ===============================
       <div>
         {/*3. 실무 효율적인 렌더링 예제*/}

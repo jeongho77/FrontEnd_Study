@@ -1,11 +1,12 @@
 import { gql, useQuery } from "@apollo/client";
 const FETCH_BOARD = gql`
   query {
-    fetchBoards {
+    fetchBoards(page : 7) {
       number
       writer
       title
       contents
+      createdAt
     }
   }
 `;
@@ -29,6 +30,8 @@ export default function StaticRoutingMovedPage() {
           <span style={{ mystyles }}> {el.number}</span>
           <span style={{ margin: "10px" }}>{el.title}</span>
           <span style={{ margin: "10px" }}>{el.writer}</span>
+          <span style={{ margin: "10px" }}>{el.content}</span>
+          <span style={{ margin: "10px" }}>{el.createdAt}</span>
         </div>
       ))}
       {/* <div>1번 페이지 이동이 완료되었습니다.</div> */}
