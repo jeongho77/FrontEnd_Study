@@ -31,7 +31,6 @@ export default function StaticRoutingMovedPage() {
   };
 
   const onClickDelete = (event) => {
-    Number(event.target.id);
     deleteBoard({
       variables: {
         number: Number(event.target.id),
