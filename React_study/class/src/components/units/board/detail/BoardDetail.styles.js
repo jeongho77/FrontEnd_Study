@@ -131,3 +131,40 @@ export const Bad = styled.img`
   background-size: cover;
   border: 0;
 `;
+
+export const Footer = styled.div`
+  width: 1200px;
+  margin: 100px;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+`
+
+export const List_btn = styled.button`
+  padding : 10px 60px;
+  font-size: 30px;
+  font-weight: bold;
+  background-color: white;
+  border : 2px solid grey;
+  cursor: pointer;
+  
+`
+export const modify_btn = styled.button`
+  padding : 10px 60px;
+  font-size: 30px;
+  font-weight: bold;
+  background-color: white;
+  border : 2px solid grey;
+  margin : 0px 50px;
+  cursor: pointer;
+`
+
+export const Delete_btn = styled.button`
+  padding : 10px 60px;
+  font-size: 30px;
+  font-weight: bold;
+  background-color: white;
+  border : 2px solid grey;
+  cursor: pointer;
+`
+

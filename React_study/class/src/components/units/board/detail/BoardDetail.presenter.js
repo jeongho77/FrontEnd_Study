@@ -2,6 +2,7 @@ import * as S from "./BoardDetail.styles";
 
 export default function BoardDetailUI(props) {
   return (
+    <>
     <S.Wrapper>
       <S.Header>
         <S.Profile>
@@ -36,5 +37,12 @@ export default function BoardDetailUI(props) {
         </S.Like_Wrapper>
       </S.Content_Wrapper>
     </S.Wrapper>
+
+    <S.Footer>
+      <S.List_btn onClick={props.onClickMoveToBoardList}>목록으로</S.List_btn>
+      <S.modify_btn>수정하기</S.modify_btn>
+      <S.Delete_btn id={props.data?.fetchBoard?.number} onClick={props.onClickDelete}>삭제하기</S.Delete_btn>
+    </S.Footer>
+    </>
   );
 }
