@@ -1,3 +1,4 @@
+import { getDate } from "../../../commons/libraries/utils";
 import * as S from "./BoardDetail.styles";
 
 export default function BoardDetailUI(props) {
@@ -11,7 +12,7 @@ export default function BoardDetailUI(props) {
             <S.Writer>
               {props.data?.fetchBoard?.writer || "로딩중입니다!"}
             </S.Writer>
-            <S.Date>Date:2021.02.18</S.Date>
+            <S.Date>Date : {getDate(props.data?.fetchBoard.createdAt)}</S.Date>
           </S.Profile_Wrapper>
         </S.Profile>
         <S.Link_Wrapper>
