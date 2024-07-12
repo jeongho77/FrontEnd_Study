@@ -197,3 +197,10 @@ export const TableBottom = styled.div`
   border-top : 2px solid gray;
   
 `
+
+export const Footer = styled.div`
+
+  display:flex;
+  flex-direction: row;
+  align-items: end;
+`
