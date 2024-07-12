@@ -104,14 +104,16 @@ export default function BoardListUI(props) {
               </button>
           </span> */}
           <S.ColumHeaderNumber>{String(el.number).slice(-4).toUpperCase()}</S.ColumHeaderNumber>
-          <S.ColumHeaderTitle id={el.number} onClick={props.onClickMoveToBoardDetail}>{el.title}</S.ColumHeaderTitle>
+          <S.ColumTitle id={el.number} onClick={props.onClickMoveToBoardDetail}>{el.title}</S.ColumTitle>
           <S.ColumHeaderWriter>{el.writer}</S.ColumHeaderWriter>
           <S.ColumHeaderDate>{getDate(el.createdAt)}</S.ColumHeaderDate>
         </S.Row>
       ))}
-      
-
       </S.Head>
+      <S.Footer>
+        <S.Write_btn onClick={props.onClickMoveToBoardWrite}>게시물 등록하기</S.Write_btn>
+      </S.Footer>
     </S.Wrapper>
+
   );
 }

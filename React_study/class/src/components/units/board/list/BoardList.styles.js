@@ -167,6 +167,7 @@ export const ColumHeaderTitle = styled.div`
   width : 70%;
   text-align: center;
 `
+
 export const ColumHeaderWriter = styled.div`
   width : 10%;
   text-align: center;
@@ -183,6 +184,7 @@ export const ColumNumber = styled.div`
 export const ColumTitle = styled.div`
   width : 70%;
   text-align: center;
+  cursor: pointer;
 `
 export const ColumWriter = styled.div`
   width : 10%;
@@ -199,8 +201,17 @@ export const TableBottom = styled.div`
 `
 
 export const Footer = styled.div`
-
   display:flex;
   flex-direction: row;
-  align-items: end;
+  justify-content: flex-end;
+  margin-top: 15px;
+`
+
+export const Write_btn = styled.button`
+  padding : 15px;
+  background-color: white;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor : pointer;
 `
