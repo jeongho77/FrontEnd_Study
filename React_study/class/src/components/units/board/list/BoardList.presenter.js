@@ -97,27 +97,19 @@ export default function BoardListUI(props) {
         </S.Row>
 
         {props.data?.fetchBoards.map((el) => (
-        <S.Row key={el._id}>
-          <S.ColumnBasic>
-            {String(el._id).slice(-4).toUpperCase()}
-          </S.ColumnBasic>
-          <S.ColumnTitle id={el._id} onClick={props.onClickMoveToBoardDetail}>
-            {el.title}
-          </S.ColumnTitle>
-          <S.ColumnBasic>{el.writer}</S.ColumnBasic>
-          <S.ColumnBasic>{getDate(el.createdAt)}</S.ColumnBasic>
+        <S.Row key={el.number}>
+          {/* <span>
+            <button id={el.number} onClick={() => console.log(el.number)}>
+                삭제
+              </button>
+          </span> */}
+          <S.ColumHeaderNumber>{String(el.number).slice(-4).toUpperCase()}</S.ColumHeaderNumber>
+          <S.ColumHeaderTitle id={el.number} onClick={props.onClickMoveToBoardDetail}>{el.title}</S.ColumHeaderTitle>
+          <S.ColumHeaderWriter>{el.writer}</S.ColumHeaderWriter>
+          <S.ColumHeaderDate>{getDate(el.createdAt)}</S.ColumHeaderDate>
         </S.Row>
       ))}
-        
-
-        <S.Row>
-          <S.ColumNumber>10</S.ColumNumber>
-          <S.ColumTitle>게시물</S.ColumTitle>
-          <S.ColumWriter>ㅇㅇㅇ</S.ColumWriter>
-          <S.ColumDate>날짜</S.ColumDate>
-        </S.Row>
-        
-        <S.TableBottom></S.TableBottom>
+      
 
       </S.Head>
     </S.Wrapper>

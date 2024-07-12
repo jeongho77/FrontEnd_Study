@@ -6,12 +6,10 @@ import { FETCH_BOARDS } from "./BoardList.queries";
 export default function BoardList() {
   
   const { data } = useQuery(FETCH_BOARDS); 
+  console.log(data?.fetchBoards);
   return (
     
-    <BoardListUI 
-      data = {data}
-
-      />
+    <BoardListUI data = {data}/>
     
     );
 }

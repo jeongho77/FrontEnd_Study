@@ -3,9 +3,11 @@ import { gql } from "@apollo/client";
 export const FETCH_BOARDS = gql`
   query fetchBoards {
     fetchBoards {
-      id
+      number
       writer
       title
+      contents
+      like
       createdAt
     }
   }
