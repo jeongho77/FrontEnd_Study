@@ -79,13 +79,10 @@ export default function BoardNew() {
     if (writer && pwd && title && content) {
       try {
         const result = await createBoard({
-          variables: {
-            createBoardInput: {
+          variables: { 
               writer,
-              pwd,
               title,
               content,
-            },
           },
         });
         console.log(result.data.createBoard.number);

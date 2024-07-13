@@ -24,7 +24,7 @@ export default function BoardDetailUI(props) {
         <S.Title>{props.data?.fetchBoard?.title || "로딩중입니다!"}</S.Title>
         <S.Image src="/images/content.png"></S.Image>
         <S.Content>
-          {props.data?.fetchBoard?.content || "로딩중입니다!"}
+          {props.data?.fetchBoard?.contents || "로딩중입니다!"}
         </S.Content>
         <S.Like_Wrapper>
           <S.Like_button>
