@@ -25,9 +25,14 @@ export default function BoardDetail() {
       router.push(`/portpolio/list`);
   };
 
+  const onClickMoveToEdit = () => {
+    router.push(`/portpolio/${Number(router.query.boardid)}/edit`)
+  }
+
   return <BoardDetailUI 
     data={data}
     onClickMoveToBoardList={onClickMoveToBoardList}
     onClickDelete={onClickDelete}
+    onClickMoveToEdit={onClickMoveToEdit}
   />;
 }

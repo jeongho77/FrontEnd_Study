@@ -4,7 +4,8 @@ export default function BoardsNewPage() {
   return (
     <div>
       <div>##########여기는 페이지입니다.</div>
-      <BoardWrite />
+      <BoardWrite 
+      isEdit= {false}/>
       <div>##########여기는 페이지입니다..</div>
     </div>
   );

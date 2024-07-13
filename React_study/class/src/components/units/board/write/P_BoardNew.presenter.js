@@ -3,13 +3,15 @@ import * as P from "./P_BoardNew.styles";
 export default function BoardNewUI(props) {
   return (
     <P.Wrapper>
-      <P.Title>게시글 등록</P.Title>
+      <P.Title>게시글 {props.isEdit ? "수정" : "등록"}</P.Title>
       <P.WriterWrapper>
         <P.InputBox>
           <P.Label>작성자</P.Label>
           <P.InputWriter
             placeholder="이름을 적어주세요."
             onChange={props.onChangeWriter}
+            defaultValue={props.data?.fetchBoard.writer}
+            
           ></P.InputWriter>
           <P.Error>{props.errorWriter}</P.Error>
         </P.InputBox>
@@ -27,6 +29,7 @@ export default function BoardNewUI(props) {
         <P.InputTitle
           placeholder="제목을 작성해주세요."
           onChange={props.onChangeTitle}
+          defaultValue={props.data?.fetchBoard.title}
         ></P.InputTitle>
         <P.Error>{props.errorTitle}</P.Error>
       </P.InputBox>
@@ -35,6 +38,7 @@ export default function BoardNewUI(props) {
         <P.InputContent
           placeholder="내용을 작성해주세요."
           onChange={props.onChangeContent}
+          defaultValue={props.data?.fetchBoard.contents}
         ></P.InputContent>
         <P.Error>{props.errorContent}</P.Error>
       </P.InputBox>
@@ -72,9 +76,16 @@ export default function BoardNewUI(props) {
         </P.RadioWrapper>
       </P.InputOption>
 
-      <P.ButtonWrapper>
-        <P.SubmitButton onClick={props.submit} isActive={props.isActive}>등록하기</P.SubmitButton>
-      </P.ButtonWrapper>
+      {props.isEdit ? 
+        <P.ButtonWrapper>
+          <P.SubmitButton onClick={props.cancel} >취소하기</P.SubmitButton>
+          <P.EditButton onClick={props.edit} >수정하기</P.EditButton>
+        </P.ButtonWrapper> 
+        : 
+        <P.ButtonWrapper>
+          <P.SubmitButton onClick={props.submit} isActive={props.isActive}>등록하기</P.SubmitButton>
+        </P.ButtonWrapper>
+      }
     </P.Wrapper>
   );
 }

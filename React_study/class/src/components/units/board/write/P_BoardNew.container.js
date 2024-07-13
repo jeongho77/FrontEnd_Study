@@ -1,10 +1,10 @@
 import { useMutation } from "@apollo/client";
 import { useState } from "react";
 import BoardNewUI from "./P_BoardNew.presenter";
-import { CREATE_BOARD } from "./P_BoardNew.queries";
+import { CREATE_BOARD, UPDATE_BOARD } from "./P_BoardNew.queries";
 import { useRouter } from "next/router";
 
-export default function BoardNew() {
+export default function BoardNew(props) {
   const router = useRouter(); //해당 상위폴더가 [] 로 되어있으면 가능
 
   const [writer, setWriter] = useState();
@@ -15,7 +15,7 @@ export default function BoardNew() {
   const [isActive, setIsActive] = useState(false); 
 
   const [createBoard] = useMutation(CREATE_BOARD);
-
+  const [updateBoard] = useMutation(UPDATE_BOARD);
   const [errorWriter, setErrorWriter] = useState();
   const [errorPwd, setErrorPwd] = useState();
   const [errorTitle, setErrorTitle] = useState();
@@ -93,6 +93,27 @@ export default function BoardNew() {
     }
   };
 
+  const edit = async (event) => {
+      const myVariables = {number : Number(router.query.boardid)}
+
+      if(writer) myVariables.writer = writer;
+      if(title) myVariables.title = title;
+      if(content) myVariables.content = content;
+
+      const result = await updateBoard({
+        variables : myVariables
+      });
+
+      console.log(result)
+
+      router.push(`/portpolio/${Number(router.query.boardid)}`);
+      
+  }
+
+  const cancel = () => {
+      router.push(`/portpolio/${Number(router.query.boardid)}`);
+  }
+
   // const boardRegister = async () => {
   //   const result = await board({
   //     variables: {
@@ -115,6 +136,10 @@ export default function BoardNew() {
       onChangeContent={onChangeContent}
       submit={submit}
       isActive = {isActive}
+      isEdit={props.isEdit}
+      cancel={cancel}
+      edit={edit}
+      data={props.data}
     />
   );
 }

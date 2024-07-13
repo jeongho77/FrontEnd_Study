@@ -164,3 +164,15 @@ export const SubmitButton = styled.button`
   border: 0px;
   cursor: pointer;
 `;
+
+export const EditButton = styled.button`
+  width: 200px;
+  height: 70px;
+  font-size: 20px;
+  font-weight: 700;
+  background-color: yellow;
+  color: black;
+  border: 0px;
+  margin-left: 20px;
+  cursor: pointer;
+`;
