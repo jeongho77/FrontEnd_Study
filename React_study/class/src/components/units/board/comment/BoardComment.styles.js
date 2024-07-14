@@ -70,7 +70,7 @@ export const Content_input = styled.textarea`
 export const Submit_wrapper = styled.div`
     display : flex;
     flex-direction: row;
-    border-top : 1px solid grey;
+    box-shadow: inset 0 1px 0 0 #ece3e3;
 `
 
 export const TextLength = styled.div`
