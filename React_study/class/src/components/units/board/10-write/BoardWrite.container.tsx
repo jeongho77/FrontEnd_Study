@@ -88,5 +88,5 @@ export default function BoardWrite(props : IBoardWriteProps) {
       />
       <div>##########여기는 컨테이너입니다..</div>
     </div>
-  );
+  ); 
 }
